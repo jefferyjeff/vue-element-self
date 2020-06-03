@@ -1,0 +1,59 @@
+
+.normalTable{
+  height: 100%;
+  .el-button+.el-button{//表格内button边距
+    margin-left: 0;
+  }
+
+
+  &-header{
+    font-size: 15px;
+    padding: 0;
+    &-card{
+
+    }
+  }
+  &-main{
+    padding: 0;
+    overflow: hidden;
+    &-popconfirm{//用来对popconfirm组件中title是使用<p>包裹，这里p下和按钮添加间隔
+      p{
+        margin-bottom: 10px;
+      }
+    }
+  }
+  &-footer{
+    background: #fff;
+    padding: 10px;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  }
+}
+@media screen and (max-width: 1920px) {
+
+}
+@media screen and (max-width: 1366px) {
+  .normalTable{
+    height: 100%;
+    &-header{
+      font-size: 13px;
+      padding: 0;
+      &-card{
+        height: 50px;
+        line-height: 50px;
+        padding: 10px;
+        .el-card__body{
+          padding: 0px;
+        }
+      }
+    }
+    &-main{
+
+    }
+    &-footer{
+
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+
+}

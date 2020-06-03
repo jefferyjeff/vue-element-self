@@ -1,0 +1,56 @@
+.wzpTrans{
+  &-left{
+    float: left;
+    width: 200px;
+    height: 250px;
+    border: 1px solid #D6D6D6;
+    border-radius: 5px;
+    &-header{
+      padding: 5px;
+      background: #E6E6E6;
+      height: 25px;
+      line-height: 25px;
+      &-label{
+        font-weight: bold;
+        margin-left: 10px;
+      }
+    }
+    &-content{
+      overflow:auto;
+      height: calc(100% - 25px);
+      &-each{
+        height: 30px;
+        border-bottom: 1px solid #D6D6D6;
+        box-sizing: border-box;
+        line-height: 30px;
+        &:hover{
+          background: #F6F6F6;
+        }
+        &-word{
+          float: left;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          width: 85%;
+        }
+        &-icon{
+          display: flex;
+          float: left;
+          width: 15%;
+          justify-content: center; /* 水平居中 */
+          align-items: center;     /* 垂直居中 */
+          height: 100%;
+          &:hover{cursor: pointer;}
+        }
+      }
+    }
+  }
+  &-right{
+    float: left;
+    margin-left: 20px;
+    width: 200px;
+    height: 250px;
+    border: 1px solid #D6D6D6;
+    border-radius: 5px;
+  }
+}

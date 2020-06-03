@@ -1,0 +1,42 @@
+.wzpUpload{
+    .el-upload--picture-card{//定义上传按钮图片框的icon和大小
+      width: 60px;
+      height: 60px;
+      line-height: 68px;
+    }
+    .el-form-item__content{//文件图片显示时，默认样式会拉大上下间距,设置缩小下间距
+      line-height: 20px;
+    }
+    &-uploadList{
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      text-align: center;
+      line-height: 68px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      overflow: hidden;
+      background: #fff;
+      position: relative;
+      box-shadow: 0 1px 1px rgba(0,0,0,.2);
+      margin-right: 4px;
+    }
+    &-uploadListCover{
+      display: none;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,.6);
+    }
+    &-uploadList:hover &-uploadListCover{
+        display: block;
+    }
+    &-uploadListCover i{
+        color: #fff;
+        font-size: 20px;
+        cursor: pointer;
+        margin: 0 2px;
+    }
+  }

@@ -1,0 +1,153 @@
+.main{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  //侧边栏
+  .el-aside{
+    z-index: 101;//此值必须比在mobile时会开启遮罩的高,bg-web(common中),
+    transition: width 0.28s;//显隐动画
+  }
+  //侧边栏内部
+  &-aside{
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    box-sizing: border-box;
+    //aside的头部logo
+    .logo{
+      width: 200px;
+      height: 60px;
+      background: #F6F6F6;
+      transition: width 0.38s;
+      -moz-transition: width 0.38s; /* Firefox 4 */
+      -webkit-transition: width 0.38s; /* Safari 和 Chrome */
+      -o-transition: width 0.38s; /* Opera */
+      &-smallWidth{
+        width: 64px;
+      }
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &-scrollbar{//由于header组件高度是64,aside中顶部64可以方logo,所以导航就显示100% - 64
+      // position: relative;
+      height:calc(100% - 60px);
+    }
+  }
+  //头部栏
+  &-header{
+    height: 96px;
+    box-sizing: border-box;
+    //.blueborder;
+    //header的头部
+    .navheader{
+      height: 60px;
+      padding: 0 15px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      //.greenborder;
+      &-right{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .searchIcon{//页面搜索栏
+          font-size: 28px;
+          cursor: pointer;
+        }
+        &-select{//header的路由搜索栏
+          font-size: 18px;
+          transition: width 0.5s;
+          -moz-transition: width 0.5s; /* Firefox 4 */
+          -webkit-transition: width 0.5s; /* Safari 和 Chrome */
+          -o-transition: width 0.5s; /* Opera */
+          width: 0px;
+          overflow: hidden;
+          background: transparent;
+          border-radius: 0;
+          display: inline-block;
+          vertical-align: middle;
+        }
+        .selectWidth{//搜索栏显示是宽度
+          width: 250px;
+        }
+      }
+    }
+    &-icon{
+      font-size: 28px;
+      cursor: pointer;
+    }
+    //header的tag
+    .tagbar{
+      height: 34px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      box-shadow: 0 0 3px 0 #D6D6D6;
+      // margin-bottom: -17px;
+      .scroll-container{
+        white-space: nowrap;
+        position: relative;
+        overflow: hidden;
+        width: calc(100% - 110px);
+      }
+      .each-tag{//每个tag样式
+        display: inline-block;
+        position: relative;
+        height: 26px;
+        line-height: 26px;
+        border: 1px solid #d8dce5;
+        color: #495060;
+        background: #fff;
+        padding: 0 8px;
+        font-size: 13px;
+        margin-left: 5px;
+        margin-top: 2px;
+        cursor: pointer;
+        //width: 300px;
+        &:hover{
+          transform:scale(1.1);
+        }
+      }
+      .activeClass{//tag被激活样式
+        background: #79BBFF;
+        color: #fff;
+      }
+      &-close{//关闭标签下拉区域
+        float: right;
+        width: 100px;
+        height: 32px;
+        text-align: center;
+
+      }
+    }
+  }
+
+  /* router-view
+  */
+  &-content{
+    margin-bottom: -17px;
+    background-color: #F9F9F9;
+  }
+}
+.el-menu:not(.el-menu--collapse){/* 控制aside的宽度设置 */
+  width: 200px;
+  min-height: 100%;
+  height: auto;
+}
+
+/* 页面切换路由动画 */
+.fade-transform-leave-active,
+.fade-transform-enter-active {
+  transition: all .5s;
+}
+.fade-transform-enter {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+.fade-transform-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
